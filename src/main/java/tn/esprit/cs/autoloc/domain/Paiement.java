@@ -22,7 +22,7 @@ public class Paiement {
     private long idPaiement;
 
     @Column(nullable = false, length = 50)
-    private int montant;
+    private BigDecimal montant;
 
     @Column(nullable = false, length = 50)
     private LocalDate datePaiement;
