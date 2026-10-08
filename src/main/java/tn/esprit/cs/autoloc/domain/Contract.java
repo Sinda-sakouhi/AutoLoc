@@ -6,6 +6,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.math.BigDecimal;
+import java.util.List;
 
 @Entity
 @Table(name = "contract")
@@ -27,5 +28,12 @@ public class Contract {
 
     @Column(nullable = false, length = 50)
     private String valide;
+
+    @OneToOne (mappedBy = "contract")
+    Reservation reservation;
+
+    @OneToMany (mappedBy = "contrat", cascade = CascadeType.PERSIST)
+    List<Paiement> paiements;
+
 
 }

@@ -6,6 +6,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.math.BigDecimal;
+import java.util.List;
 
 @Entity
 @Table(name = "agence")
@@ -30,4 +31,10 @@ public class Agence {
 
     @Column(nullable = false, length = 50)
     private String telephone;
+
+    @OneToMany (mappedBy = "agence")
+    List<Vehicule> vehicules;
+
+    @OneToMany (mappedBy = "agence")
+    List<Employe> employees;
 }

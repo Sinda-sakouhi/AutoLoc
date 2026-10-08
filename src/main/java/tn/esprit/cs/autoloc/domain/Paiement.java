@@ -31,5 +31,7 @@ public class Paiement {
     @Column(nullable = false, length = 50)
     private ModePaiement modePaiement;
 
+    @ManyToOne
+    Contract contrat;
 
 }

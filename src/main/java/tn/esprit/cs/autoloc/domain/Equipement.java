@@ -6,6 +6,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.math.BigDecimal;
+import java.util.List;
 
 @Entity
 @Table(name = "equipement")
@@ -20,5 +21,7 @@ public class Equipement {
 
     @Column(nullable = false, length = 50)
     private String libelle;
+@ManyToMany (mappedBy = "equipements")
+List<Vehicule> vehicules;
 
 }

@@ -3,6 +3,7 @@ import jakarta.persistence.*;
 import lombok.*;
 
 import java.util.Date;
+import java.util.List;
 
 @Entity
 @Table(name = "client")
@@ -14,7 +15,7 @@ public class Client {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long idClient;
+    private Long idClient;
 
     @Column(nullable = false, length = 50)
     private String nom;
@@ -33,5 +34,6 @@ public class Client {
 
     @Column(nullable = false, length = 50)
     private String dateInscription;
-
+    @OneToMany(mappedBy = "client")
+    List<Reservation> reservations;
 }

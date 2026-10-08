@@ -7,6 +7,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.time.LocalDate;
+import java.util.List;
 
 @Entity
 @Table(name = "employe")
@@ -38,5 +39,7 @@ public class Employe {
 
     @Column(nullable = false, length = 50)
     private LocalDate dateInscription;
+    @ManyToOne
+    Agence agence;
 
 }
