@@ -17,23 +17,33 @@ public class Client {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long idClient;
 
-    @Column(nullable = false, length = 50)
+    @Column(nullable = true, length = 50)
     private String nom;
 
-    @Column(nullable = false, length = 50)
+    @Column(nullable = true, length = 50)
     private String prenom;
 
-    @Column(nullable = false, length = 50)
+    @Column(nullable = true, length = 50)
     private String email;
 
-    @Column(nullable = false, length = 8)
+    @Column(nullable = true, length = 8)
     private String telephone;
 
-    @Column(nullable = false, length = 50)
+    @Column(nullable = true, length = 50)
     private long numPermis;
 
-    @Column(nullable = false, length = 50)
+    @Column(nullable = true, length = 50)
     private String dateInscription;
     @OneToMany(mappedBy = "client")
     List<Reservation> reservations;
+
+
+    public Long getId() {
+        return idClient;
+    }
+
+    public void setId(Long id) {
+        this.idClient = id;
+    }
 }
+

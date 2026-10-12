@@ -1,4 +1,6 @@
 package tn.esprit.cs.autoloc.service;
+import lombok.AllArgsConstructor;
+import org.springframework.stereotype.Service;
 import tn.esprit.cs.autoloc.domain.Client;
 import java.util.List;
 
